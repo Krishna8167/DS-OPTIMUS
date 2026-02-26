@@ -14,3 +14,26 @@ class Solution {
 }
 
 case 2: HashMap for the optimal solution.
+
+import java.util.Map;
+import java.util.HashMap;
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        if (nums.length == 0) {
+            return new int[] {-1, -1};
+        } 
+        Map<Integer, Integer> maps = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int need = target - nums[i];
+            if (maps.containsKey(need)) {
+                return new int[] {i, maps.get(need) };
+                }
+
+                maps.put(nums[i], i);
+            }
+
+        return new int[]{-1, -1};
+    }
+}
+
